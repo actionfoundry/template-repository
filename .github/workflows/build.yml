@@ -1,0 +1,22 @@
+name: "Build GitHub Action"
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  build:
+    name: "Build job"
+    runs-on: 
+      - ubuntu-latest
+    steps:
+      - name: "Checkout"
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: "Build"
+        id: build
+        run: |
+          echo "Build"
